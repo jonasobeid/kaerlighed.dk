@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Kærlighedsspil 💖</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: pink;
+      padding: 50px;
+    }
+    button {
+      padding: 15px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>💖 Kærlighedsquiz 💖</h1>
+<p id="question"></p>
+
+<button onclick="answer(0)">Svar 1</button>
+<button onclick="answer(1)">Svar 2</button>
+<button onclick="answer(2)">Svar 3</button>
+
+<p id="result"></p>
+
+<script>
+let questions = [
+  {
+    q: "Hvad elsker jeg mest ved dig?",
+    answers: ["Dit smil", "Din mad", "Alt ved dig ❤️"],
+    correct: 2
+  },
+  {
+    q: "Hvad er vores yndlingsaktivitet sammen?",
+    answers: ["Kramme", "Se film", "Alt sammen"],
+    correct: 2
+  },
+  {
+    q: "Vil du være min for evigt?",
+    answers: ["Ja 😍", "Ja ❤️", "JA FOR ALTID 💖"],
+    correct: 2
+  }
+];
+
+let current = 0;
+
+function showQuestion() {
+  document.getElementById("question").innerText = questions[current].q;
+  let buttons = document.querySelectorAll("button");
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].innerText = questions[current].answers[i];
+  }
+}
+
+function answer(choice) {
+  if (choice === questions[current].correct) {
+    document.getElementById("result").innerText = "Rigtigt! ❤️";
+    current++;
+    if (current < questions.length) {
+      setTimeout(showQuestion, 1000);
+    } else {
+      document.body.innerHTML = "<h1>Jeg elsker dig for evigt 💍❤️</h1>";
+    }
+  } else {
+    document.getElementById("result").innerText = "Forkert 😜 prøv igen";
+  }
+}
+
+showQuestion();
+</script>
+
+</body>
+</html>
