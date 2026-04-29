@@ -7,6 +7,7 @@ st.set_page_config(
     layout="centered"
 )
 
+# Styling
 st.markdown("""
 <style>
 .stApp {
@@ -26,26 +27,44 @@ h1, h2, h3, p {
     font-size: 70px;
     text-align: center;
 }
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+}
 </style>
 """, unsafe_allow_html=True)
 
 # Top
 st.markdown("<div class='big-heart'>❤️</div>", unsafe_allow_html=True)
-st.title("Til min smukke Qainat")
+st.title("Til Qainat")
 st.subheader("Bare en lille hjemmeside lavet med kærlighed")
 
-# Besked
-st.markdown("""
-<div class="love-box">
-<p>Jeg elsker dig ❤️</p>
+st.write("")
 
-<p>Selv når tingene ikke er helt nemme, så er du stadig den, jeg vil være sammen med.</p>
-<p>Vi har vores udfordringer, men jeg ved, vi kan komme igennem dem – sammen.</p>
-<p>Jeg giver ikke op på os, og jeg tror på det, vi har.</p>
+# 💌 Kuvert / brev
+st.markdown("### En lille besked til dig 💌")
 
-<p>Du betyder virkelig meget for mig.</p>
-</div>
-""", unsafe_allow_html=True)
+if st.button("Åbn kuverten 💌"):
+    st.markdown("""
+    <div style="
+        background:white;
+        padding:30px;
+        border-radius:20px;
+        box-shadow:0 6px 20px rgba(0,0,0,0.15);
+        text-align:center;
+        font-size:18px;
+        line-height:1.7;
+        animation: fadeIn 1s;
+    ">
+        <div style="font-size:80px;">💌</div>
+        <h3>Til min Qainat</h3>
+        <p>Jeg elsker dig ❤️</p>
+        <p>Selv når tingene ikke er helt nemme, så er du stadig den, jeg vil være sammen med.</p>
+        <p>Vi har vores udfordringer, men jeg ved, vi kan komme igennem dem – sammen.</p>
+        <p>Jeg giver ikke op på os, og jeg tror på det, vi har.</p>
+        <p>Du betyder virkelig meget for mig.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 st.write("")
 
@@ -81,48 +100,46 @@ if st.button("Beregn kærlighed ❤️"):
 
 st.write("")
 
-# BESKED KNAP
-st.markdown("### En lille besked til dig")
-
-if st.button("Åbn besked 💌"):
-    st.info("""
-    Jeg elsker dig ❤️  
-
-    Uanset hvad vi går igennem, så klarer vi det sammen.  
-    Jeg giver ikke op på os.
-    """)
-
-st.write("")
-
-# 🔥 NYT: BILLEDER
+# 🎞️ Slideshow billeder
 st.markdown("### Vores minder ❤️")
 
-col1, col2, col3 = st.columns(3)
+images = ["os1.jpg", "os2.jpg", "os3.JPG", "os4.JPG", "os5.JPG", "os6.JPG"]
+
+if "photo_index" not in st.session_state:
+    st.session_state.photo_index = 0
+
+col1, col2, col3 = st.columns([1, 3, 1])
 
 with col1:
-    st.image("os1.jpg", use_container_width=True)
-    st.image("os4.JPG", use_container_width=True)
+    if st.button("⬅️"):
+        st.session_state.photo_index = (st.session_state.photo_index - 1) % len(images)
 
 with col2:
-    st.image("os2.jpg", use_container_width=True)
-    st.image("os5.JPG", use_container_width=True)
+    st.image(
+        images[st.session_state.photo_index],
+        use_container_width=True,
+        caption=f"Minde {st.session_state.photo_index + 1} af {len(images)} ❤️"
+    )
 
 with col3:
-    st.image("os3.JPG", use_container_width=True)
-    st.image("os6.JPG", use_container_width=True)
+    if st.button("➡️"):
+        st.session_state.photo_index = (st.session_state.photo_index + 1) % len(images)
+
+if st.button("Næste minde ❤️"):
+    st.session_state.photo_index = (st.session_state.photo_index + 1) % len(images)
 
 st.write("")
 
-st.caption(f"Lavet med kærlighed den {date.today().strftime('%d-%m-%Y')} ❤️")
-
-st.write("")
+# 💋 Godnat kys
 st.markdown("### Godnat ❤️")
 
 if st.button("Tryk for godnatkys 💋"):
     st.markdown(
-        "<div style='text-align:center; font-size:150px;'>💋</div>",
+        "<div style='text-align:center; font-size:180px;'>💋</div>",
         unsafe_allow_html=True
     )
     st.balloons()
-    st.success("Godnat Qainat ❤️")
-    # Footer
+    st.success("Godnat min skat ❤️")
+
+# Footer
+st.caption(f"Lavet med kærlighed den {date.today().strftime('%d-%m-%Y')} ❤️")
