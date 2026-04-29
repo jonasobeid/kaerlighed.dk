@@ -68,20 +68,31 @@ if st.button("Åbn kuverten 💌"):
 
 st.write("")
 
-# Dropdown
+# ❤️ Hvorfor jeg elsker dig
+st.markdown("### Hvorfor jeg elsker dig ❤️")
+
 reason = st.selectbox(
-    "Tryk her og vælg en grund ❤️",
+    "En af de mange grunde:",
     [
         "Du har det smukkeste smil",
         "Du gør mig glad uden at prøve",
         "Du er min yndlingsperson",
-        "Jeg elsker at tænke på vores fremtid",
+        "Jeg elsker at tænke på vores fremtid sammen",
         "Du betyder mere for mig, end jeg kan forklare"
     ]
 )
 
-st.success(reason)
-
+st.markdown(f"""
+<div style="
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+">
+❤️ {reason}
+</div>
+""", unsafe_allow_html=True)
 st.write("")
 
 # Kærlighedsberegner
