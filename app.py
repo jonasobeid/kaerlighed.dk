@@ -101,19 +101,18 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     st.image("os1.jpg", use_container_width=True)
-    st.image("os4.jpg", use_container_width=True)
+    st.image("os4.JPG", use_container_width=True)
 
 with col2:
     st.image("os2.jpg", use_container_width=True)
-    st.image("os5.jpg", use_container_width=True)
+    st.image("os5.JPG", use_container_width=True)
 
 with col3:
-    st.image("os3.jpg", use_container_width=True)
-    st.image("os6.jpg", use_container_width=True)
+    st.image("os3.JPG", use_container_width=True)
+    st.image("os6.JPG", use_container_width=True)
 
 st.write("")
 
-# Footer
 st.caption(f"Lavet med kærlighed den {date.today().strftime('%d-%m-%Y')} ❤️")
 
 st.write("")
@@ -126,3 +125,4 @@ if st.button("Tryk for godnatkys 💋"):
     )
     st.balloons()
     st.success("Godnat Qainat ❤️")
+    # Footer
