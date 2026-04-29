@@ -30,8 +30,8 @@ h1, h2, h3, p {
 """, unsafe_allow_html=True)
 
 st.markdown("<div class='big-heart'>❤️</div>", unsafe_allow_html=True)
-st.title("Til min smukke Qainat")
-st.subheader("Bare en lille hjemmeside lavet med kærlighed")
+st.title("Til Qainat")
+st.subheader("Bare en for at vise min kærlighed til dig")
 
 st.markdown("""
 <div class="love-box">
@@ -67,7 +67,7 @@ if st.button("Beregn kærlighed ❤️"):
     if name:
         st.balloons()
         st.markdown(f"## {name} + {wife} = 100% meant to be ❤️")
-        st.write("Ingen diskussion. Det er videnskabeligt bevist af JonasGPT.")
+        st.write("Ingen diskussion. Det er videnskabeligt bevist af universet.")
     else:
         st.warning("Skriv lige dit navn først 😄")
 
@@ -76,9 +76,13 @@ st.markdown("### En lille besked til dig")
 
 if st.button("Åbn besked 💌"):
     st.info("""
-    Qainat, jeg lavede den her lille hjemmeside bare for at få dig til at smile.
-    
-    Du betyder alt for mig, og jeg er så taknemmelig for dig.
+    Jeg elsker dig ❤️
+Selv når tingene ikke er helt nemme, så er du stadig den, jeg vil være sammen med.
+
+Vi har vores udfordringer, men jeg ved, vi kan komme igennem dem – sammen.
+Jeg giver ikke op på os, og jeg tror på det, vi har.
+
+Du betyder virkelig meget for mig.
     
     Jeg glæder mig til vores fremtid sammen ❤️
     """)
