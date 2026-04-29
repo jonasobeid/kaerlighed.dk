@@ -29,21 +29,27 @@ h1, h2, h3, p {
 </style>
 """, unsafe_allow_html=True)
 
+# Top
 st.markdown("<div class='big-heart'>❤️</div>", unsafe_allow_html=True)
-st.title("Til Qainat")
-st.subheader("Bare en for at vise min kærlighed til dig")
+st.title("Til min smukke Qainat")
+st.subheader("Bare en lille hjemmeside lavet med kærlighed")
 
+# Besked
 st.markdown("""
 <div class="love-box">
-<h3>Hvorfor jeg elsker dig</h3>
-<p>Fordi du er min ro, min glæde og mit hjem.</p>
-<p>Du får selv almindelige dage til at føles specielle.</p>
-<p>Og jeg glæder mig til alt det liv, vi skal bygge sammen.</p>
+<p>Jeg elsker dig ❤️</p>
+
+<p>Selv når tingene ikke er helt nemme, så er du stadig den, jeg vil være sammen med.</p>
+<p>Vi har vores udfordringer, men jeg ved, vi kan komme igennem dem – sammen.</p>
+<p>Jeg giver ikke op på os, og jeg tror på det, vi har.</p>
+
+<p>Du betyder virkelig meget for mig.</p>
 </div>
 """, unsafe_allow_html=True)
 
 st.write("")
 
+# Dropdown
 reason = st.selectbox(
     "Tryk her og vælg en grund ❤️",
     [
@@ -58,6 +64,8 @@ reason = st.selectbox(
 st.success(reason)
 
 st.write("")
+
+# Kærlighedsberegner
 st.markdown("### Lille kærlighedsberegner")
 
 name = st.text_input("Skriv dit navn")
@@ -67,25 +75,54 @@ if st.button("Beregn kærlighed ❤️"):
     if name:
         st.balloons()
         st.markdown(f"## {name} + {wife} = 100% meant to be ❤️")
-        st.write("Ingen diskussion. Det er videnskabeligt bevist af universet.")
+        st.write("Ingen diskussion 😄")
     else:
         st.warning("Skriv lige dit navn først 😄")
 
 st.write("")
+
+# BESKED KNAP
 st.markdown("### En lille besked til dig")
 
 if st.button("Åbn besked 💌"):
     st.info("""
-    Jeg elsker dig ❤️
-Selv når tingene ikke er helt nemme, så er du stadig den, jeg vil være sammen med.
+    Jeg elsker dig ❤️  
 
-Vi har vores udfordringer, men jeg ved, vi kan komme igennem dem – sammen.
-Jeg giver ikke op på os, og jeg tror på det, vi har.
-
-Du betyder virkelig meget for mig.
-    
-    Jeg glæder mig til vores fremtid sammen ❤️
+    Uanset hvad vi går igennem, så klarer vi det sammen.  
+    Jeg giver ikke op på os.
     """)
 
 st.write("")
+
+# 🔥 NYT: BILLEDER
+st.markdown("### Vores minder ❤️")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.image("os1.jpg", use_container_width=True)
+    st.image("os4.jpg", use_container_width=True)
+
+with col2:
+    st.image("os2.jpg", use_container_width=True)
+    st.image("os5.jpg", use_container_width=True)
+
+with col3:
+    st.image("os3.jpg", use_container_width=True)
+    st.image("os6.jpg", use_container_width=True)
+
+st.write("")
+
+# Footer
 st.caption(f"Lavet med kærlighed den {date.today().strftime('%d-%m-%Y')} ❤️")
+
+st.write("")
+st.markdown("### Godnat ❤️")
+
+if st.button("Tryk for godnatkys 💋"):
+    st.markdown(
+        "<div style='text-align:center; font-size:150px;'>💋</div>",
+        unsafe_allow_html=True
+    )
+    st.balloons()
+    st.success("Godnat Qainat ❤️")
